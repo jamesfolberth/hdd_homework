@@ -1,8 +1,8 @@
 % GNU Octave
 function [] = p23()
   
-   plot_minmax('bernoulli_eigs.h5','$\lambda_{min}$ and $\lambda_{max}$ for Symmetric Bernoulli Matrices','figures/p23_bernoulli.tikz')
-   plot_minmax('gauss_eigs.h5','$\lambda_{min}$ and $\lambda_{max}$ for GOE Matrices','figures/p23_gauss.tikz')
+   plot_minmax('bernoulli_sym_eigs.h5','$\lambda_{min}$ and $\lambda_{max}$ for Symmetric Bernoulli Matrices','figures/p23_bernoulli.tikz')
+   plot_minmax('gauss_orth_eigs.h5','$\lambda_{min}$ and $\lambda_{max}$ for GOE Matrices','figures/p23_gauss.tikz')
 
 end 
 
@@ -43,10 +43,10 @@ function [] = compute_eigs(mat_type)
 
    if strcmp(mat_type,'bernoulli_sym')
       mat_build_cmd = @(dim) bernoulli_sym(dim,0.5);
-      savefile = 'bernoulli_eigs.h5';
+      savefile = 'bernoulli_sym_eigs.h5';
    elseif strcmp(mat_type,'gauss_orth')
       mat_build_cmd = @(dim) gauss_orth(dim);
-      savefile = 'gauss_eigs.h5';
+      savefile = 'gauss_orth_eigs.h5';
    else
       error('bad matrix type\n');
    end
