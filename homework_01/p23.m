@@ -14,8 +14,8 @@ function [] = plot_minmax(savefile,titlestring,figurefilename)
    maxeigs = zeros([N numel(n)]);
    for dim=1:numel(n)
       for i=1:N
-         mineigs(i,dim) = min(evals(1:n(dim),i,dim));
-         maxeigs(i,dim) = max(evals(1:n(dim),i,dim));
+         mineigs(i,dim) = min(abs(evals(1:n(dim),i,dim)));
+         maxeigs(i,dim) = max(abs(evals(1:n(dim),i,dim)));
       end
    end
 
