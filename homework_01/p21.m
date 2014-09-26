@@ -14,7 +14,7 @@ function [] = p21()
    hist(d,500)
    xlabel('Distance from origin','interpreter','tex');
    ylabel('Count','interpreter','tex')
-   title('Histogram of distance from origin for various dimensions','interpreter','tex');
+   title('Histograms of distance from origin for various dimensions','interpreter','tex');
    print('figures/p21.tikz','-dtikz','-S1280,960');
 end
 
