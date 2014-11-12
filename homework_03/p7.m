@@ -2,7 +2,7 @@
 function [] = p7(savefile='rankings.mat')
 load(savefile)
 
-i = numel(alpha); % choose one of the alphas
+i = 5; % choose one of the alphas
 rank = rankings(:,i);
 
 r = [linspace(0,.1,50) .2:.1:1];
@@ -28,7 +28,7 @@ hold off
 
 xlabel('rank $r$');
 ylabel('Frequency of ranking $g(r)$');
-title('Distribution of rankings');
+title('Distribution of rankings - \alpha = 0.99');
 print('figures/p7.tikz','-dtikz','-S640x480');
 
 end
