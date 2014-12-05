@@ -25,21 +25,21 @@ A = [U + transpose(U) + diag(dP), Q;
 I = eye(n);
 ix = randperm (n);
 T = I(ix,:);
-T = I;
+%T = I;
 
 A = T*A*transpose(T);
 
 if nargout == 3
-   Omega = [ones([n2 n2]) zeros([n2 n2]);
-            zeros([n2 n2]) -ones([n2 n2])];
-   Omega = T*Omega*transpose(T);
+   %Omega = [ones([n2 n2]) zeros([n2 n2]);
+   %         zeros([n2 n2]) -ones([n2 n2])];
+   %Omega = T*Omega*transpose(T);
 
    omega = ones([n 1]);
-   c2inds = find(Omega == -1);
-   for i = 1:numel(c2inds)
-      omega(ind2sub([n n],c2inds(i))) = -1;
-   end
-
+   omega(find(ix>n2)) = -1;
+   %c2inds = find(Omega == -1);
+   %for i = 1:numel(c2inds)
+   %   omega(ind2sub([n n],c2inds(i))) = -1;
+   %end
 end
 
 end
